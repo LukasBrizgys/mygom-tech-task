@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState, FC} from 'react';
 import { Item } from '../../App';
 import '../../styles/style.scss';
 import DropdownItem from './DropdownItem';
@@ -6,7 +6,7 @@ type ComponentProps = {
 	items: Item[],
 	selectionLimit?: number,
 }
-export const Dropdown = ({items, selectionLimit} : ComponentProps) => {
+export const Dropdown : FC<ComponentProps> = ({items, selectionLimit} : ComponentProps) => {
 	const dropdownEl = useRef<HTMLDivElement>(null);
 	const [dropDownToggle, setDropDownToggle] = useState<boolean>(false);
 	const [selected, setSelected] = useState<string[]>([]);
